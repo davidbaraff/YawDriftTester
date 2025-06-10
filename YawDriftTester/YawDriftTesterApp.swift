@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct YawDriftTesterApp: App {
+    init() {
+        _ = AppMC.shared
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().edgesIgnoringSafeArea(.all)
         }
     }
 }
