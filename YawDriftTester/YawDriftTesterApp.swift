@@ -15,7 +15,12 @@ struct YawDriftTesterApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView().edgesIgnoringSafeArea(.all)
+            ContentView()
+                .edgesIgnoringSafeArea(.all)
+                .onAppear {
+                    print("Set idle timer disabled on content view")
+                    UIApplication.shared.isIdleTimerDisabled = true
+                }
         }
     }
 }
